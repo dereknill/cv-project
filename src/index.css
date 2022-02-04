@@ -9,6 +9,7 @@
   --primary-color: #0E0B16;
   --secondary-color: #A239CA;
   --tertiary-color: #4717F6;
+  --offwhite-color: #f6f1f0;
 }
 
 body {
@@ -50,6 +51,32 @@ footer {
   background-color: var(--primary-color);
   color: var(--neutral-color);
   
+}
+
+main {
+  display: grid;
+  margin: 30px auto;
+  width: 92vw;
+  max-width: 95vw;
+  grid-template-columns: 1fr 800px;
+  grid-gap: 40px;
+}
+
+@media screen and (max-width: 1600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-form{
+  background-color: var(--offwhite-color);
+  min-height: 500px;
+  min-width: 300px;
+}
+
+.section-preview{
+  background-color: var(--secondary-color);
+  min-height: 300px;
 }
 
 .margin-0-5 {

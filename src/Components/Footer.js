@@ -11,7 +11,7 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <h4>Created by Derek Nill</h4><FontAwesomeIcon icon={faGithub} className="margin-0-5"></FontAwesomeIcon>
+                <h4>Created by Derek Clancy-Nill</h4><FontAwesomeIcon icon={faGithub} className="margin-0-5"></FontAwesomeIcon>
             </footer>
         );
     }

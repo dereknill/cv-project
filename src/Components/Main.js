@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Form from './Sections/Form';
+import Preview from './Sections/Preview';
 
 class Main extends Component {
     constructor(props) {
@@ -7,7 +9,12 @@ class Main extends Component {
     }
 
     render() {
-        return null;
+        return (
+            <main>
+                <Form></Form>
+                <Preview></Preview>
+            </main>
+        );
     }
 }
 
