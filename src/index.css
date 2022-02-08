@@ -90,8 +90,9 @@ main {
 }
 
 .section-preview {
-  background-color: var(--secondary-color);
-  min-height: 300px;
+  background-color: white;
+  height: 0;
+  padding-bottom: 129%;
 }
 
 .margin-0-5 {
@@ -149,6 +150,51 @@ button:hover {
 }
 
 .phone-input {
-  font-size: 30px !important;
+  font-size: 1.2em !important;
   font-family: "Roboto", sans-serif !important;
+  width: 100% !important;
+}
+
+.phone-input-pos {
+  margin: 10px auto !important;
+  border-radius: 5px;
+  border: 0;
+  width: auto !important;
+}
+
+.preview-header {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-preview h1 {
+  font-size: 3em;
+}
+
+.preview-header h3 {
+  font-size: 1em;
+}
+
+.preview-header h2 {
+  font-size: 1.6em;
+  margin-bottom: 2%;
+}
+
+.preview-summary {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.preview-summary h2 {
+  margin: 1% 0;
+}
+
+hr {
+  border: 1px solid black;
+  margin: 1% 0;
 }

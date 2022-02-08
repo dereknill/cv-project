@@ -9,7 +9,15 @@ class Experience extends Component {
   }
 
   render() {
-    const { lastElement, index, handleChange, experienceObject, handleAdd, handleDelete, addDeleteButton} = this.props;
+    const {
+      lastElement,
+      index,
+      handleChange,
+      experienceObject,
+      handleAdd,
+      handleDelete,
+      addDeleteButton,
+    } = this.props;
     return (
       <fieldset>
         <legend>Experience</legend>
@@ -32,10 +40,17 @@ class Experience extends Component {
           section='exp'
         ></input>
         <input
-          placeholder='Date Started'
           type='text'
-          onFocus={(e) => (e.target.type = 'date')}
-          onBlur={(e) => (e.target.type = 'text')}
+          placeholder='Location'
+          name='location'
+          index={index}
+          onChange={handleChange}
+          value={experienceObject.location}
+          section='exp'
+        ></input>
+        <input
+          placeholder='Year Started'
+          type='number'
           name='dateStarted'
           index={index}
           onChange={handleChange}
@@ -43,34 +58,24 @@ class Experience extends Component {
           section='exp'
         />
         <input
-          type='text'
-          placeholder='Date Ended (leave blank if current employer)'
-          onFocus={(e) => (e.target.type = 'date')}
-          onBlur={(e) => (e.target.type = 'text')}
+          type='number'
+          placeholder='Year Ended (leave blank if current employer)'
           index={index}
           name='dateEnded'
           onChange={handleChange}
           value={experienceObject.dateEnded}
           section='exp'
         ></input>
-        <textarea
-          placeholder='Achievements'
-          cols='1000'
-          rows='5'
-          index={index}
-          name='achievements'
-          onChange={handleChange}
-          value={experienceObject.achievements}
-          section='exp'
-        ></textarea>
-        {addDeleteButton &&
+        {addDeleteButton && (
           <DeleteButton
             handler={handleDelete}
             index={index}
-            section="exp"
+            section='exp'
           ></DeleteButton>
-        }
-        {lastElement && <AddButton handler={handleAdd} section="exp"></AddButton>}
+        )}
+        {lastElement && (
+          <AddButton handler={handleAdd} section='exp'></AddButton>
+        )}
       </fieldset>
     );
   }

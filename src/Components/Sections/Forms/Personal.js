@@ -47,8 +47,11 @@ class Personal extends Component {
         ></input>
         <PhoneInput
           placeholder='Phone Number'
-          className='phone-input'
+          inputClass='phone-input'
+          containerClass='phone-input-pos'
           country={"us"}
+          onlyCountries={["us"]}
+          disableCountryCode={true}
           onChange={(phone) => handlePhoneChange(phone)}
           value={personalObject.phone}
         ></PhoneInput>

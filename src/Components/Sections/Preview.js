@@ -1,4 +1,6 @@
-import { Component } from 'react';
+import { Component } from "react";
+import Header from "./Previews/Header";
+import Summary from "./Previews/Summary";
 
 class Preview extends Component {
   constructor(props) {
@@ -7,12 +9,14 @@ class Preview extends Component {
   }
 
   render() {
-      return (
-        <section className="section-preview">
-          <h3>{this.props.experienceList[0].achievements}</h3>
-          </section>
-      );
-      
+    return (
+      <section className='section-preview'>
+        <Header personalInfo={this.props.personalInfo}></Header>
+        <Summary personalInfo={this.props.personalInfo}></Summary>
+        <div className='preview-experience'></div>
+        <div className='preview-education'></div>
+      </section>
+    );
   }
 }
 

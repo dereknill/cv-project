@@ -30,9 +30,12 @@ class Main extends Component {
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
   }
 
-  handlePhoneChange(phone) {
-    console.log(phone);
+  handlePhoneChange(phoneNum) {
+    this.setState({
+      personalInfo: [{ ...this.state.personalInfo[0], phone: phoneNum }],
+    });
   }
+
   handleChange(event) {
     const index = event.target.getAttribute("index");
     const name = event.target.name;
@@ -109,7 +112,11 @@ class Main extends Component {
           handleDelete={this.handleDelete}
           handlePhoneChange={this.handlePhoneChange}
         ></Form>
-        <Preview experienceList={this.state.experienceList}></Preview>
+        <Preview
+          experienceList={this.state.experienceList}
+          educationList={this.state.educationList}
+          personalInfo={this.state.personalInfo[0]}
+        ></Preview>
       </main>
     );
   }
