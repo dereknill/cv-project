@@ -7,7 +7,7 @@ class DeleteButton extends Component {
   }
 
   render() {
-    return <button className='delete-button'>Delete</button>;
+    return <button className='delete-button' index={this.props.index} onClick={this.props.handler} section={this.props.section}>Delete</button>;
   }
 }
 

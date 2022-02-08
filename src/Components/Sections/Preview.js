@@ -8,7 +8,9 @@ class Preview extends Component {
 
   render() {
       return (
-          <section className="section-preview"></section>
+        <section className="section-preview">
+          <h3>{this.props.experienceList[0].achievements}</h3>
+          </section>
       );
       
   }

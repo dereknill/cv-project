@@ -9,10 +9,11 @@ class Education extends Component {
   }
 
   render() {
+    const { index, lastElement, educationObject, handleAdd, handleChange, handleDelete } = this.props;
     return (
       <fieldset>
         <legend>Education</legend>
-        <input type='text' placeholder='Degree Title'></input>
+        <input type='text' placeholder='Degree Title' name="degreeTitle" onChange={handleChange} section="edu" index={index} value={educationObject.degreeTitle}></input>
         <input type='text' placeholder='Educational Establishment'></input>
         <input type='text' placeholder='GPA'></input>
         <input
@@ -31,7 +32,7 @@ class Education extends Component {
           cols='1000'
           rows='3'></textarea>
         <DeleteButton></DeleteButton>
-        {this.props.lastElement && <AddButton></AddButton>}
+        {lastElement && <AddButton></AddButton>}
       </fieldset>
     );
   }

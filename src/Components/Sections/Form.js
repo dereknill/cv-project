@@ -10,22 +10,28 @@ class Form extends Component {
   }
 
   addExperienceSections(list) {
-    if (list.length < 1) {
-      return <Experience lastElement={true}></Experience>;
-    }
     return list.map((element, index) => {
       const lastElement = index === list.length - 1;
-      return <Experience lastElement={lastElement}></Experience>;
+      
+      return <Experience
+        lastElement={lastElement}
+        handleDelete={this.props.handleDelete}
+        handleAdd={this.props.handleAdd}
+        index={index}
+        handleChange={this.props.handleChange}
+        key={index}
+        experienceObject={element}
+        addDeleteButton={list.length > 1}
+        >
+        </Experience>;
     });
   }
 
   addEducationSections(list) {
-    if (list.length < 1) {
-      return <Education lastElement={true}></Education>;
-    }
+
     return list.map((element, index) => {
       const lastElement = index === list.length - 1;
-      return <Education lastElement={lastElement}></Education>;
+      return <Education lastElement={lastElement} handleAdd={this.props.handleAdd} handleDelete={this.props.handleDelete} handleChange={this.props.handleChange} index={index} key={index} educationObject={element} addDeleteButton={list.lengt > 1}></Education>;
     });
   }
 

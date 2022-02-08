@@ -8,7 +8,7 @@ class AddButton extends Component {
 
   render() {
     return (
-      <button className='add-button'>
+      <button className='add-button' onClick={this.props.handler} section={this.props.section}>
         <span className='button-text'>Add More</span>
       </button>
     );
