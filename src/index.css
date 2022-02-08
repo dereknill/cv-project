@@ -147,3 +147,8 @@ button:hover {
 .delete-button {
   background-color: var(--warning-color);
 }
+
+.phone-input {
+  font-size: 30px !important;
+  font-family: "Roboto", sans-serif !important;
+}
