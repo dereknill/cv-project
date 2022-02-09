@@ -4,8 +4,7 @@ class EducationObj {
     this.degreeTitle = "";
     this.establishment = "";
     this.location = "";
-    this.dateStarted = "";
-    this.dateEnded = "";
+    this.year = "";
   }
 }
 

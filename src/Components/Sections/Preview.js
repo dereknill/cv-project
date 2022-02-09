@@ -1,6 +1,8 @@
 import { Component } from "react";
 import Header from "./Previews/Header";
 import Summary from "./Previews/Summary";
+import Education from "./Previews/Education";
+import Experience from "./Previews/Experience";
 
 class Preview extends Component {
   constructor(props) {
@@ -13,8 +15,8 @@ class Preview extends Component {
       <section className='section-preview'>
         <Header personalInfo={this.props.personalInfo}></Header>
         <Summary personalInfo={this.props.personalInfo}></Summary>
-        <div className='preview-experience'></div>
-        <div className='preview-education'></div>
+        <Education educationList={this.props.educationList}></Education>
+        <Experience experienceList={this.props.experienceList}></Experience>
       </section>
     );
   }

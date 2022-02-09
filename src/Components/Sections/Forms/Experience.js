@@ -21,15 +21,7 @@ class Experience extends Component {
     return (
       <fieldset>
         <legend>Experience</legend>
-        <input
-          type='text'
-          placeholder='Title'
-          name='title'
-          index={index}
-          onChange={handleChange}
-          value={experienceObject.title}
-          section='exp'
-        ></input>
+
         <input
           type='text'
           placeholder='Company Name'
@@ -46,6 +38,15 @@ class Experience extends Component {
           index={index}
           onChange={handleChange}
           value={experienceObject.location}
+          section='exp'
+        ></input>
+        <input
+          type='text'
+          placeholder='Title'
+          name='title'
+          index={index}
+          onChange={handleChange}
+          value={experienceObject.title}
           section='exp'
         ></input>
         <input

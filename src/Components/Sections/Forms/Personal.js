@@ -39,10 +39,26 @@ class Personal extends Component {
         ></input>
         <input
           type='text'
-          placeholder='Address'
+          placeholder='Street Address'
           name='address'
           onChange={handleChange}
           value={personalObject.address}
+          index='0'
+        ></input>
+        <input
+          type='text'
+          placeholder='City'
+          name='city'
+          onChange={handleChange}
+          value={personalObject.city}
+          index='0'
+        ></input>
+        <input
+          type='text'
+          placeholder='State'
+          name='state'
+          onChange={handleChange}
+          value={personalObject.state}
           index='0'
         ></input>
         <PhoneInput

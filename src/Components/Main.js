@@ -17,6 +17,8 @@ class Main extends Component {
           lastName: "",
           title: "",
           address: "",
+          city: "",
+          state: "",
           phone: "",
           description: "",
           email: "",

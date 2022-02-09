@@ -7,6 +7,10 @@ class Summary extends Component {
   }
 
   render() {
+    const enabled = this.props.personalInfo.description.length > 0;
+    if (!enabled) {
+      return null;
+    }
     return (
       <div className='preview-summary'>
         <h2>SUMMARY</h2>

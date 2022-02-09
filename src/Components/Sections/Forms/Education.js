@@ -23,15 +23,6 @@ class Education extends Component {
         <legend>Education</legend>
         <input
           type='text'
-          placeholder='Degree Title'
-          name='degreeTitle'
-          onChange={handleChange}
-          section='edu'
-          index={index}
-          value={educationObject.degreeTitle}
-        ></input>
-        <input
-          type='text'
           placeholder='Educational Establishment'
           name='establishment'
           section='edu'
@@ -41,45 +32,31 @@ class Education extends Component {
         ></input>
         <input
           type='text'
-          placeholder='GPA'
-          name='gpa'
+          placeholder='Location'
+          name='location'
           section='edu'
           onChange={handleChange}
           index={index}
-          value={educationObject.gpa}
+          value={educationObject.location}
         ></input>
         <input
-          placeholder='Date Started'
           type='text'
-          section='edu'
-          name='dateStarted'
-          index={index}
+          placeholder='Degree Title'
+          name='degreeTitle'
           onChange={handleChange}
-          value={educationObject.dateStarted}
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={(e) => (e.target.type = "text")}
-        />
-        <input
-          type='text'
-          placeholder='Date Ended (leave blank if in progress)'
-          name='dateEnded'
           section='edu'
           index={index}
-          onChange={handleChange}
-          value={educationObject.value}
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={(e) => (e.target.type = "text")}
+          value={educationObject.degreeTitle}
         ></input>
-        <textarea
-          placeholder='Relevant Coursework'
-          cols='1000'
-          rows='3'
-          name='coursework'
+        <input
+          placeholder='Graduation Year'
+          type='number'
           section='edu'
+          name='year'
           index={index}
           onChange={handleChange}
-          value={educationObject.coursework}
-        ></textarea>
+          value={educationObject.year}
+        ></input>
         {addDeleteButton && (
           <DeleteButton
             section='edu'

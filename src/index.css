@@ -163,8 +163,8 @@ button:hover {
 }
 
 .preview-header {
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-bottom: 4%;
   margin-left: 0;
   margin-right: 0;
   display: flex;
@@ -194,7 +194,26 @@ button:hover {
   margin: 1% 0;
 }
 
+.preview-summary h3 {
+  font-size: 1em;
+}
+.preview-entry {
+  width: 80%;
+  margin: 3% auto;
+}
+
 hr {
   border: 1px solid black;
   margin: 1% 0;
+}
+
+.entry-section {
+  margin: 2% 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.entry-section div:nth-child(even) {
+  text-align: right;
 }
