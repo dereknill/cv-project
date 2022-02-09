@@ -5,27 +5,17 @@ import Preview from "./Sections/Preview";
 import EducationObj from "./Sections/Util/EducationObj";
 import ExperienceObj from "./Sections/Util/ExperienceObj";
 import { v4 as uuidv4 } from "uuid";
+import PersonalObj from "./Sections/Util/PersonalObj";
+import ExampleData from "./Sections/Util/ExampleData";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.props = props;
     this.state = {
-      experienceList: [new ExperienceObj(0)],
-      educationList: [new EducationObj(0)],
-      personalInfo: [
-        {
-          firstName: "",
-          lastName: "",
-          title: "",
-          address: "",
-          city: "",
-          state: "",
-          phone: "",
-          description: "",
-          email: "",
-        },
-      ],
+      experienceList: [new ExperienceObj(uuidv4())],
+      educationList: [new EducationObj(uuidv4())],
+      personalInfo: [new PersonalObj(uuidv4())],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,6 +23,17 @@ class Main extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.getComponentRef = this.getComponentRef.bind(this);
+    this.loadExampleData = this.loadExampleData.bind(this);
+  }
+
+  loadExampleData(event) {
+    event.preventDefault();
+    const exampleData = new ExampleData();
+    this.setState({
+      experienceList: exampleData.experienceList,
+      educationList: exampleData.educationList,
+      personalInfo: exampleData.personalInfo,
+    });
   }
 
   handlePhoneChange(phoneNum) {
@@ -58,7 +59,12 @@ class Main extends Component {
       key = "experienceList";
     }
 
-    listCopy[index][name] = event.target.value;
+    for (let i = 0; i < listCopy.length; i++) {
+      if (listCopy[i].index === index) {
+        listCopy[i][name] = event.target.value;
+      }
+    }
+
     this.setState({ [key]: listCopy });
   }
 
@@ -70,14 +76,15 @@ class Main extends Component {
     let newObj;
     if (section === "edu") {
       listCopy = [...this.state.educationList];
-      newObj = new EducationObj(this.state.educationList.length);
+      newObj = new EducationObj(uuidv4());
       key = "educationList";
     } else if (section === "exp") {
       listCopy = [...this.state.experienceList];
-      newObj = new ExperienceObj(this.state.experienceList.length);
+      newObj = new ExperienceObj(uuidv4());
       key = "experienceList";
+    } else {
+      return null;
     }
-    console.log(listCopy);
     listCopy.push(newObj);
 
     this.setState({
@@ -100,7 +107,7 @@ class Main extends Component {
     }
 
     const filteredList = listCopy.filter(
-      (element, i) => parseInt(element.index) !== parseInt(index)
+      (element, i) => element.index !== index
     );
     this.setState({
       [key]: filteredList,
@@ -110,18 +117,20 @@ class Main extends Component {
   getComponentRef() {
     return this.componentRef;
   }
+
   render() {
     return (
       <main>
         <Form
           experienceList={this.state.experienceList}
           educationList={this.state.educationList}
-          personalObject={this.state.personalInfo}
+          personalObject={this.state.personalInfo[0]}
           handleChange={this.handleChange}
           handleAdd={this.handleAdd}
           handleDelete={this.handleDelete}
           handlePhoneChange={this.handlePhoneChange}
           getComponentRef={this.getComponentRef}
+          loadExampleData={this.loadExampleData}
         ></Form>
         <Preview
           ref={(el) => (this.componentRef = el)}

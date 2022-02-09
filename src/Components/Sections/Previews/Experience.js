@@ -8,6 +8,12 @@ class Experience extends Component {
 
   getExperienceSections(list) {
     return list.map((element, index) => {
+      let dateEnded;
+      if (element.dateStarted !== "" && element.dateEnded === "") {
+        dateEnded = "Present";
+      } else {
+        dateEnded = element.dateEnded;
+      }
       return (
         <div className='entry-section' key={index}>
           <div>
@@ -18,7 +24,7 @@ class Experience extends Component {
             <em>{element.title}</em>
           </div>
           <div>
-            {element.dateStarted} - {element.dateEnded}
+            {element.dateStarted} - {dateEnded}
           </div>
         </div>
       );

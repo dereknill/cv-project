@@ -250,8 +250,21 @@ hr {
 .bottom-button {
   background-color: #4a4453;
   width: 100%;
+  margin: 0;
 }
 
 .green-bg {
   background-color: #006f4c;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+}
+
+h4 {
+  display: inline;
 }

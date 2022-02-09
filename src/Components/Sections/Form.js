@@ -19,9 +19,9 @@ class Form extends Component {
           lastElement={lastElement}
           handleDelete={this.props.handleDelete}
           handleAdd={this.props.handleAdd}
-          index={index}
+          index={element.index}
           handleChange={this.props.handleChange}
-          key={index}
+          key={element.index}
           experienceObject={element}
           addDeleteButton={list.length > 1}
         ></Experience>
@@ -38,8 +38,8 @@ class Form extends Component {
           handleAdd={this.props.handleAdd}
           handleDelete={this.props.handleDelete}
           handleChange={this.props.handleChange}
-          index={index}
-          key={index}
+          index={element.index}
+          key={element.index}
           educationObject={element}
           addDeleteButton={list.length > 1}
         ></Education>
@@ -59,16 +59,22 @@ class Form extends Component {
           {this.addEducationSections(this.props.educationList)}
           {this.addExperienceSections(this.props.experienceList)}
           <div className='button-container'>
-            <button className='bottom-button'>
-              <span className='button-text'>Load Example</span>
+            <button
+              className='bottom-button'
+              onClick={this.props.loadExampleData}
+            >
+              Load Example
             </button>
           </div>
           <ReactToPrint
             trigger={() => {
               return (
                 <div className='button-container'>
-                  <button className='bottom-button green-bg'>
-                    <span className='button-text'>Print CV</span>
+                  <button
+                    className='bottom-button green-bg'
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Print CV
                   </button>
                 </div>
               );

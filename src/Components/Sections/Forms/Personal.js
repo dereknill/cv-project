@@ -19,7 +19,7 @@ class Personal extends Component {
           name='firstName'
           onChange={handleChange}
           value={personalObject.firstName}
-          index='0'
+          index={personalObject.index}
         ></input>
         <input
           type='text'
@@ -27,7 +27,7 @@ class Personal extends Component {
           name='lastName'
           onChange={handleChange}
           value={personalObject.lastName}
-          index='0'
+          index={personalObject.index}
         ></input>
         <input
           type='text'
@@ -35,7 +35,7 @@ class Personal extends Component {
           name='title'
           onChange={handleChange}
           value={personalObject.title}
-          index='0'
+          index={personalObject.index}
         ></input>
         <input
           type='text'
@@ -43,7 +43,7 @@ class Personal extends Component {
           name='address'
           onChange={handleChange}
           value={personalObject.address}
-          index='0'
+          index={personalObject.index}
         ></input>
         <input
           type='text'
@@ -51,7 +51,7 @@ class Personal extends Component {
           name='city'
           onChange={handleChange}
           value={personalObject.city}
-          index='0'
+          index={personalObject.index}
         ></input>
         <input
           type='text'
@@ -59,7 +59,7 @@ class Personal extends Component {
           name='state'
           onChange={handleChange}
           value={personalObject.state}
-          index='0'
+          index={personalObject.index}
         ></input>
         <PhoneInput
           placeholder='Phone Number'
@@ -70,6 +70,7 @@ class Personal extends Component {
           disableCountryCode={true}
           onChange={(phone) => handlePhoneChange(phone)}
           value={personalObject.phone}
+          index={personalObject.index}
         ></PhoneInput>
         <input
           type='email'
@@ -77,7 +78,7 @@ class Personal extends Component {
           name='email'
           onChange={handleChange}
           value={personalObject.email}
-          index='0'
+          index={personalObject.index}
         ></input>
         <textarea
           placeholder='Description'
@@ -86,7 +87,7 @@ class Personal extends Component {
           name='description'
           onChange={handleChange}
           value={personalObject.description}
-          index='0'
+          index={personalObject.index}
         ></textarea>
       </fieldset>
     );
