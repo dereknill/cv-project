@@ -12,6 +12,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.componentRef = React.createRef();
     this.state = {
       experienceList: [new ExperienceObj(uuidv4())],
       educationList: [new EducationObj(uuidv4())],
