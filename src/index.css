@@ -11,7 +11,7 @@
   --secondary-color: #a239ca;
   --tertiary-color: #4717f6;
   --offwhite-color: rgb(220, 220, 220);
-  --warning-color: rgb(212, 3, 3);
+  --warning-color: #9c2c00;
 }
 
 #root {
@@ -102,7 +102,6 @@ main {
 .section-form fieldset {
   width: 90%;
   margin: 10px auto;
-  min-height: 200px;
   padding: 10px 20px;
 }
 
@@ -174,6 +173,7 @@ button:hover {
 
 .section-preview h1 {
   font-size: 3em;
+  color: rgb(5, 92, 5);
 }
 
 .preview-header h3 {
@@ -192,6 +192,7 @@ button:hover {
 
 .preview-summary h2 {
   margin: 1% 0;
+  letter-spacing: 0.15em;
 }
 
 .preview-summary h3 {
@@ -216,4 +217,41 @@ hr {
 
 .entry-section div:nth-child(even) {
   text-align: right;
+}
+
+.preview-entry h2 {
+  letter-spacing: 0.15em;
+}
+
+@media screen and (max-width: 950px) {
+  .section-preview {
+    font-size: 1.7vw;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media print {
+  html,
+  body {
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}
+
+.button-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px 22px;
+}
+.bottom-button {
+  background-color: #4a4453;
+  width: 100%;
+}
+
+.green-bg {
+  background-color: #006f4c;
 }

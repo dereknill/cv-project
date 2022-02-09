@@ -1,8 +1,10 @@
 import { Component } from "react";
+import React from "react";
 import Form from "./Sections/Form";
 import Preview from "./Sections/Preview";
 import EducationObj from "./Sections/Util/EducationObj";
 import ExperienceObj from "./Sections/Util/ExperienceObj";
+import { v4 as uuidv4 } from "uuid";
 
 class Main extends Component {
   constructor(props) {
@@ -30,6 +32,7 @@ class Main extends Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    this.getComponentRef = this.getComponentRef.bind(this);
   }
 
   handlePhoneChange(phoneNum) {
@@ -96,12 +99,17 @@ class Main extends Component {
       key = "experienceList";
     }
 
-    const filteredList = listCopy.filter((element, i) => i !== parseInt(index));
+    const filteredList = listCopy.filter(
+      (element, i) => parseInt(element.index) !== parseInt(index)
+    );
     this.setState({
       [key]: filteredList,
     });
   }
 
+  getComponentRef() {
+    return this.componentRef;
+  }
   render() {
     return (
       <main>
@@ -113,8 +121,10 @@ class Main extends Component {
           handleAdd={this.handleAdd}
           handleDelete={this.handleDelete}
           handlePhoneChange={this.handlePhoneChange}
+          getComponentRef={this.getComponentRef}
         ></Form>
         <Preview
+          ref={(el) => (this.componentRef = el)}
           experienceList={this.state.experienceList}
           educationList={this.state.educationList}
           personalInfo={this.state.personalInfo[0]}

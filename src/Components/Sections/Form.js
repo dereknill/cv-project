@@ -2,6 +2,7 @@ import { Component } from "react";
 import Personal from "./Forms/Personal";
 import Experience from "./Forms/Experience";
 import Education from "./Forms/Education";
+import ReactToPrint from "react-to-print";
 
 class Form extends Component {
   constructor(props) {
@@ -57,6 +58,23 @@ class Form extends Component {
           ></Personal>
           {this.addEducationSections(this.props.educationList)}
           {this.addExperienceSections(this.props.experienceList)}
+          <div className='button-container'>
+            <button className='bottom-button'>
+              <span className='button-text'>Load Example</span>
+            </button>
+          </div>
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <div className='button-container'>
+                  <button className='bottom-button green-bg'>
+                    <span className='button-text'>Print CV</span>
+                  </button>
+                </div>
+              );
+            }}
+            content={() => this.props.getComponentRef()}
+          />
         </form>
       </section>
     );
