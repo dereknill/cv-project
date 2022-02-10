@@ -18,7 +18,19 @@ class Header extends Component {
         newString += " ";
       }
     }
-    return `(${newString[0]}${newString[1]}${newString[2]})${newString[3]}${newString[4]}${newString[5]}-${newString[6]}${newString[7]}${newString[8]}${newString[9]}`;
+    return `(${newString[0]}${newString[1]}${newString[2]}) ${newString[3]}${newString[4]}${newString[5]}-${newString[6]}${newString[7]}${newString[8]}${newString[9]}`;
+  }
+
+  formatCityAndState(city, state) {
+    let output = "";
+    if (state && city) {
+      output = `${city}, ${state}`;
+    } else if (state) {
+      output = state;
+    } else if (city) {
+      output = city;
+    }
+    return output;
   }
 
   render() {
@@ -32,7 +44,7 @@ class Header extends Component {
         <h2>{personalInfo.title}</h2>
         <h3>{personalInfo.address}</h3>
         <h3>
-          {personalInfo.city}, {personalInfo.state}
+          {this.formatCityAndState(personalInfo.city, personalInfo.state)}
         </h3>
         <h3>{personalInfo.email}</h3>
         <h3>{this.formatPhone(personalInfo.phone)}</h3>

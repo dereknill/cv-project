@@ -2,7 +2,6 @@ import { Component } from "react";
 import Personal from "./Forms/Personal";
 import Experience from "./Forms/Experience";
 import Education from "./Forms/Education";
-import ReactToPrint from "react-to-print";
 
 class Form extends Component {
   constructor(props) {
@@ -85,19 +84,3 @@ class Form extends Component {
 }
 
 export default Form;
-
-// {/* <ReactToPrint
-// trigger={() => {
-//   return (
-//     <div className='button-container'>
-//       <button
-//         className='bottom-button green-bg'
-//         onClick={(e) => e.preventDefault()}
-//       >
-//         Print CV
-//       </button>
-//     </div>
-//   );
-// }}
-// content={() => this.props.getComponentRef()}
-// /> */}

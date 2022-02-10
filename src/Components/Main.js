@@ -23,7 +23,6 @@ class Main extends Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.getComponentRef = this.getComponentRef.bind(this);
     this.loadExampleData = this.loadExampleData.bind(this);
   }
 
@@ -115,10 +114,6 @@ class Main extends Component {
     });
   }
 
-  getComponentRef() {
-    return this.componentRef;
-  }
-
   render() {
     return (
       <main>
@@ -130,11 +125,9 @@ class Main extends Component {
           handleAdd={this.handleAdd}
           handleDelete={this.handleDelete}
           handlePhoneChange={this.handlePhoneChange}
-          getComponentRef={this.getComponentRef}
           loadExampleData={this.loadExampleData}
         ></Form>
         <Preview
-          ref={(el) => (this.componentRef = el)}
           experienceList={this.state.experienceList}
           educationList={this.state.educationList}
           personalInfo={this.state.personalInfo[0]}
