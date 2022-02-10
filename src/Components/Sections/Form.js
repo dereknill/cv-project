@@ -66,21 +66,18 @@ class Form extends Component {
               Load Example
             </button>
           </div>
-          <ReactToPrint
-            trigger={() => {
-              return (
-                <div className='button-container'>
-                  <button
-                    className='bottom-button green-bg'
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Print CV
-                  </button>
-                </div>
-              );
-            }}
-            content={() => this.props.getComponentRef()}
-          />
+
+          <div className='button-container'>
+            <button
+              className='bottom-button green-bg'
+              onClick={(e) => {
+                e.preventDefault();
+                window.print();
+              }}
+            >
+              Print CV
+            </button>
+          </div>
         </form>
       </section>
     );
@@ -88,3 +85,19 @@ class Form extends Component {
 }
 
 export default Form;
+
+// {/* <ReactToPrint
+// trigger={() => {
+//   return (
+//     <div className='button-container'>
+//       <button
+//         className='bottom-button green-bg'
+//         onClick={(e) => e.preventDefault()}
+//       >
+//         Print CV
+//       </button>
+//     </div>
+//   );
+// }}
+// content={() => this.props.getComponentRef()}
+// /> */}

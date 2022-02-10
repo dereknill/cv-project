@@ -12,7 +12,7 @@ class Preview extends Component {
 
   render() {
     return (
-      <section className='section-preview'>
+      <section className='section-preview section-to-print'>
         <Header personalInfo={this.props.personalInfo}></Header>
         <Summary personalInfo={this.props.personalInfo}></Summary>
         <Education educationList={this.props.educationList}></Education>
